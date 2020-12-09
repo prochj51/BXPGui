@@ -1,0 +1,6 @@
+[gui_scripts]
+craftsman = craftsman:main
+
+[qtpyvcp.vcp]
+craftsman = craftsman
+

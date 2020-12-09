@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+craftsman/__init__.py
+craftsman/__init__.py.bak
+craftsman/config.yml
+craftsman/config.yml.bak
+craftsman/mainwindow.py
+craftsman.egg-info/PKG-INFO
+craftsman.egg-info/SOURCES.txt
+craftsman.egg-info/dependency_links.txt
+craftsman.egg-info/entry_points.txt
+craftsman.egg-info/top_level.txt
+craftsman/resources/resources.qrc
+craftsman/ui/mainwindow.ui
+craftsman/ui/style.qss
