@@ -57,10 +57,22 @@ background-color:rgb(252, 233, 79)
         <item row="0" column="0">
          <widget class="QFrame" name="verticalFrame">
           <property name="frameShape">
-           <enum>QFrame::Box</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
             <number>0</number>
            </property>
            <item>
@@ -69,6 +81,21 @@ background-color:rgb(252, 233, 79)
               <enum>QFrame::Box</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,5,4">
+              <property name="spacing">
+               <number>2</number>
+              </property>
+              <property name="leftMargin">
+               <number>2</number>
+              </property>
+              <property name="topMargin">
+               <number>2</number>
+              </property>
+              <property name="rightMargin">
+               <number>2</number>
+              </property>
+              <property name="bottomMargin">
+               <number>2</number>
+              </property>
               <item>
                <widget class="QFrame" name="verticalFrame">
                 <property name="frameShape">
@@ -93,12 +120,36 @@ background-color:rgb(252, 233, 79)
                  <enum>QFrame::Box</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_5">
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
                  <item>
                   <widget class="QFrame" name="ProcessControl">
                    <property name="frameShape">
                     <enum>QFrame::Box</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_3">
+                    <property name="leftMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>2</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>2</number>
+                    </property>
                     <item>
                      <widget class="QFrame" name="gridFrame">
                       <property name="maximumSize">
@@ -420,8 +471,113 @@ VELOCITY</string>
                  <enum>QFrame::Box</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>2</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>2</number>
+                 </property>
                  <item>
                   <widget class="VTKBackPlot" name="vtkbackplot"/>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="horizontalFrame">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+background-color:rgb(32, 74, 100);
+color:rgb(255, 255, 255);
+border-radius:0px;
+border-line:2px;
+min-height:35px;
+min-width:70px;
+font: 10pt &quot;MathJax_Size3 Bold&quot;;
+}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_4">
+                    <property name="spacing">
+                     <number>1</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QPushButton" name="pView">
+                      <property name="styleSheet">
+                       <string notr="true">border-bottom-left-radius:5px</string>
+                      </property>
+                      <property name="text">
+                       <string>P</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="xView">
+                      <property name="text">
+                       <string>X</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="yView">
+                      <property name="text">
+                       <string>Y</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="zView">
+                      <property name="text">
+                       <string>Z</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="zoomIn">
+                      <property name="text">
+                       <string>+</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="zoomOut">
+                      <property name="text">
+                       <string>-</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="clearView">
+                      <property name="styleSheet">
+                       <string notr="true">border-bottom-right-radius:5px</string>
+                      </property>
+                      <property name="text">
+                       <string>Clear</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -525,5 +681,118 @@ VELOCITY</string>
  <resources>
   <include location="../resources/resources.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pView</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewP()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xView</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>765</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yView</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewY()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>836</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zView</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>setViewZ()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>907</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoomIn</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>978</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zoomOut</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1049</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clearView</sender>
+   <signal>clicked()</signal>
+   <receiver>vtkbackplot</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1120</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>907</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
