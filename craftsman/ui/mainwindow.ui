@@ -22,6 +22,15 @@
     <height>1080</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>DejaVu Sans Mono</family>
+    <pointsize>10</pointsize>
+    <weight>75</weight>
+    <italic>false</italic>
+    <bold>true</bold>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -29,7 +38,12 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(0, 0, 0);
+   <string notr="true">background-color:rgb(0,0,0)
+
+
+
+
+
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -52,7 +66,7 @@ background-color:rgb(252, 233, 79)
         <string notr="true"/>
        </property>
        <attribute name="title">
-        <string>Tab 1</string>
+        <string>MAIN SCREEN</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
@@ -193,13 +207,21 @@ background-color:rgb(252, 233, 79)
                         <height>800</height>
                        </size>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
-                       <string notr="true">QPushButton, DialogButton{
+                       <string notr="true">QPushButton, DialogButton, ActionButton{
 background-color:rgb(32, 74, 135);
-border-radius:0px
+border-radius:0px;
+font: bold large &quot;DejaVu Sans Mono&quot;
 }
 
-QPushButton:hover,DialogButton:hover{
+QPushButton:hover,DialogButton:hover, ActionButton:hover{
 background-color: rgba(32, 74, 135, 50%)
 }
 </string>
@@ -264,6 +286,14 @@ background-color: rgba(32, 74, 135, 50%)
                            <verstretch>0</verstretch>
                           </sizepolicy>
                          </property>
+                         <property name="font">
+                          <font>
+                           <family>DejaVu Sans Mono</family>
+                           <weight>75</weight>
+                           <italic>false</italic>
+                           <bold>true</bold>
+                          </font>
+                         </property>
                          <property name="text">
                           <string>ESTOP</string>
                          </property>
@@ -279,6 +309,14 @@ background-color: rgba(32, 74, 135, 50%)
                            <horstretch>0</horstretch>
                            <verstretch>0</verstretch>
                           </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>DejaVu Sans Mono</family>
+                           <weight>75</weight>
+                           <italic>false</italic>
+                           <bold>true</bold>
+                          </font>
                          </property>
                          <property name="text">
                           <string>POWER</string>
@@ -370,7 +408,8 @@ color:rgb(255, 255, 255);
 border-radius:0px;
 border-line:2px;
 min-height:35px;
-font: 10pt &quot;MathJax_Size3 Bold&quot;;
+font: bold large &quot;DejaVu Sans Mono &quot;
+
 }
 
 QPushButton:hover{
@@ -388,11 +427,10 @@ background-color: rgba(32, 74, 135, 50%)
                      <widget class="QPushButton" name="pushButton_15">
                       <property name="font">
                        <font>
-                        <family>MathJax_Size3 Bold</family>
-                        <pointsize>10</pointsize>
-                        <weight>50</weight>
+                        <family>DejaVu Sans Mono </family>
+                        <weight>75</weight>
                         <italic>false</italic>
-                        <bold>false</bold>
+                        <bold>true</bold>
                        </font>
                       </property>
                       <property name="text">
@@ -448,6 +486,14 @@ HEIGHT</string>
                     </item>
                     <item row="1" column="1">
                      <widget class="QPushButton" name="pushButton_14">
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono </family>
+                        <weight>75</weight>
+                        <italic>false</italic>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="text">
                        <string>DWELLING</string>
                       </property>
@@ -655,21 +701,28 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">ActionButton{
+                 <string notr="true">ActionButton, MDIButton{
 background-color:rgb(32, 74, 135);
 border-radius:0px;
 max-width: 100px;
 min-height : 35px;
+font: bold large &quot;DejaVu Sans Mono&quot;
 }
 
-ActionButton:hover{
+ActionButton:hover, MDIButton:hover{
 background-color: rgba(32, 74, 135, 50%)
 }
 
 DROWidget
 {
-background-color:rgb(238, 238, 236)
+background-color:rgb(211, 215, 207)
 }
+
+QFrame QPushButton{
+font: bold large &quot;DejaVu Sans Mono&quot;
+}
+
+
 
 </string>
                 </property>
@@ -689,6 +742,9 @@ background-color:rgb(238, 238, 236)
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
+                 <property name="horizontalSpacing">
+                  <number>10</number>
+                 </property>
                  <property name="verticalSpacing">
                   <number>1</number>
                  </property>
@@ -700,26 +756,21 @@ background-color:rgb(238, 238, 236)
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:5px;
+border-top-right-radius:5px</string>
+                   </property>
                    <property name="text">
                     <string>X REF</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <widget class="ActionButton" name="actionbutton_16">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>X ZERO</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="2">
                   <widget class="DROWidget" name="drowidget">
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:5px;
+border-top-right-radius:5px</string>
+                   </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
@@ -730,6 +781,12 @@ background-color:rgb(238, 238, 236)
                  </item>
                  <item row="0" column="3">
                   <widget class="QFrame" name="gridFrame_0">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_7">
                     <property name="leftMargin">
                      <number>0</number>
@@ -754,15 +811,23 @@ background-color:rgb(238, 238, 236)
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
-text-align:left</string>
+text-align:left;
+border-top-left-radius:5px;
+border-top-right-radius:5px</string>
                       </property>
                       <property name="text">
                        <string>MIN X</string>
@@ -775,7 +840,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_2">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -793,6 +858,12 @@ text-align:left</string>
                  </item>
                  <item row="0" column="4">
                   <widget class="QFrame" name="gridFrame_1">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_11">
                     <property name="leftMargin">
                      <number>0</number>
@@ -817,15 +888,23 @@ text-align:left</string>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
-text-align:left</string>
+text-align:left;
+border-top-left-radius:5px;
+border-top-right-radius:5px</string>
                       </property>
                       <property name="text">
                        <string>MAX X</string>
@@ -835,7 +914,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_5">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -864,19 +943,6 @@ text-align:left</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="ActionButton" name="actionbutton_17">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Y ZERO</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="2">
                   <widget class="DROWidget" name="drowidget_2">
                    <property name="alignment">
@@ -892,6 +958,12 @@ text-align:left</string>
                  </item>
                  <item row="1" column="3">
                   <widget class="QFrame" name="gridFrame">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_8">
                     <property name="leftMargin">
                      <number>0</number>
@@ -911,7 +983,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -923,9 +995,15 @@ text-align:left</string>
                     </item>
                     <item row="0" column="0">
                      <widget class="QPushButton" name="pushButton_4">
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -943,6 +1021,12 @@ text-align:left</string>
                  </item>
                  <item row="1" column="4">
                   <widget class="QFrame" name="gridFrame_5">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_12">
                     <property name="leftMargin">
                      <number>0</number>
@@ -967,12 +1051,18 @@ text-align:left</string>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -985,7 +1075,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_6">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -1014,19 +1104,6 @@ text-align:left</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="1">
-                  <widget class="ActionButton" name="actionbutton_18">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Z ZERO</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="2">
                   <widget class="DROWidget" name="drowidget_3">
                    <property name="alignment">
@@ -1042,6 +1119,12 @@ text-align:left</string>
                  </item>
                  <item row="2" column="3">
                   <widget class="QFrame" name="gridFrame_2">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_9">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1061,7 +1144,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_3">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1073,9 +1156,15 @@ text-align:left</string>
                     </item>
                     <item row="0" column="0">
                      <widget class="QPushButton" name="pushButton_7">
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -1093,6 +1182,12 @@ text-align:left</string>
                  </item>
                  <item row="2" column="4">
                   <widget class="QFrame" name="gridFrame_6">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_13">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1117,12 +1212,18 @@ text-align:left</string>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -1135,7 +1236,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_7">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -1164,19 +1265,6 @@ text-align:left</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1">
-                  <widget class="ActionButton" name="actionbutton_19">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>A ZERO</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="3" column="2">
                   <widget class="DROWidget" name="drowidget_4">
                    <property name="alignment">
@@ -1192,6 +1280,12 @@ text-align:left</string>
                  </item>
                  <item row="3" column="3">
                   <widget class="QFrame" name="gridFrame_3">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_10">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1211,7 +1305,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_4">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1223,9 +1317,15 @@ text-align:left</string>
                     </item>
                     <item row="0" column="0">
                      <widget class="QPushButton" name="pushButton_8">
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -1243,6 +1343,12 @@ text-align:left</string>
                  </item>
                  <item row="3" column="4">
                   <widget class="QFrame" name="gridFrame_7">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_14">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1267,12 +1373,18 @@ text-align:left</string>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
+                       <string notr="true">min-height:5px;
 max-height:15px;
 border-radius:0px;
 text-align:left</string>
@@ -1285,7 +1397,7 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_8">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true"/>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -1309,9 +1421,13 @@ text-align:left</string>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-bottom-left-radius:5px;
+border-bottom-right-radius:5px</string>
+                   </property>
                    <property name="text">
-                    <string>Home
-All</string>
+                    <string>HOME
+ALL</string>
                    </property>
                    <property name="rules" stdset="0">
                     <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Homed' if ch[0] else 'Home\\nAll'&quot;, &quot;name&quot;: &quot;ButtonText&quot;}]</string>
@@ -1321,8 +1437,26 @@ All</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="1">
-                  <widget class="ActionButton" name="actionbutton_20">
+                 <item row="4" column="2">
+                  <widget class="ActionButton" name="actionbutton_21">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(245, 121, 0);
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px</string>
+                   </property>
+                   <property name="text">
+                    <string>GO TO ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="MDIButton" name="mdibutton">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1330,17 +1464,90 @@ All</string>
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>ZERO ALL</string>
+                    <string>Y ZERO</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
+                   </property>
+                   <property name="MDICommand" stdset="0">
+                    <string>G10 L20 P{ch[0]} Y0.0</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="2">
-                  <widget class="ActionButton" name="actionbutton_21">
-                   <property name="styleSheet">
-                    <string notr="true">background-color:rgb(245, 121, 0)</string>
+                 <item row="2" column="1">
+                  <widget class="MDIButton" name="mdibutton_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>GO TO ZERO</string>
+                    <string>Z ZERO</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
+                   </property>
+                   <property name="MDICommand" stdset="0">
+                    <string>G10 L20 P{ch[0]} Z0.0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="MDIButton" name="mdibutton_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>A ZERO</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
+                   </property>
+                   <property name="MDICommand" stdset="0">
+                    <string>G10 L20 P{ch[0]} A0.0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="MDIButton" name="mdibutton_4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>ZERO
+ALL</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
+                   </property>
+                   <property name="MDICommand" stdset="0">
+                    <string>G10 L20 P{ch[0]} X0.0 Y0.0 Z0.0</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="MDIButton" name="mdibutton_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>X ZERO</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
+                   </property>
+                   <property name="MDICommand" stdset="0">
+                    <string>G10 L20 P{ch[0]} X0.0</string>
                    </property>
                   </widget>
                  </item>
@@ -1356,6 +1563,7 @@ border-radius:0px;
 min-width: 80px;
 max-width: 200px;
 min-height : 35px;
+font: bold large &quot;DejaVu Sans Mono&quot;
 }
 
 ActionButton:hover, QPushButton:hover{
@@ -1380,6 +1588,12 @@ background-color: rgba(32, 74, 135, 50%)
                  </property>
                  <item row="2" column="2">
                   <widget class="QPushButton" name="pushButton">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="text">
                     <string>PLUS</string>
                    </property>
@@ -1433,45 +1647,6 @@ max-width:300px
                        <property name="spacing">
                         <number>0</number>
                        </property>
-                       <item row="1" column="0">
-                        <widget class="StatusLabel" name="statuslabel_16">
-                         <property name="styleSheet">
-                          <string notr="true">background-color:rgb(238, 238, 236)</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
-                         </property>
-                         <property name="indent">
-                          <number>0</number>
-                         </property>
-                         <property name="rules" stdset="0">
-                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]*100) + '%'&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <widget class="QPushButton" name="pushButton_29">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
-max-height:15px;
-border-radius:0px;
-text-align:left</string>
-                         </property>
-                         <property name="text">
-                          <string>SPINDLE OVERRIDE</string>
-                         </property>
-                        </widget>
-                       </item>
                       </layout>
                      </widget>
                     </item>
@@ -1525,7 +1700,9 @@ text-align:left</string>
 min-height:5px;
 max-height:15px;
 border-radius:0px;
-text-align:left</string>
+text-align:left;
+border-top-left-radius:5px;
+border-top-right-radius:5px</string>
                          </property>
                          <property name="text">
                           <string>JOG SPEED</string>
@@ -1616,7 +1793,9 @@ text-align:left</string>
                        <item row="1" column="0">
                         <widget class="StatusLabel" name="statuslabel_15">
                          <property name="styleSheet">
-                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                          <string notr="true">background-color:rgb(238, 238, 236);
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px</string>
                          </property>
                          <property name="alignment">
                           <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -1819,7 +1998,8 @@ text-align:left</string>
 min-height:5px;
 max-height:15px;
 border-radius:0px;
-text-align:left</string>
+text-align:left;
+</string>
                       </property>
                       <property name="text">
                        <string>HEIGHT</string>
@@ -1926,7 +2106,8 @@ text-align:left</string>
                     <item row="1" column="0">
                      <widget class="StatusLabel" name="statuslabel_9">
                       <property name="styleSheet">
-                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                       <string notr="true">background-color:rgb(238, 238, 236);
+</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
@@ -1955,7 +2136,9 @@ text-align:left</string>
 min-height:5px;
 max-height:15px;
 border-radius:0px;
-text-align:left</string>
+text-align:left;
+border-top-left-radius:5px;
+border-top-right-radius:5px</string>
                       </property>
                       <property name="text">
                        <string>TOOL #</string>
@@ -1967,6 +2150,16 @@ text-align:left</string>
                  </item>
                  <item row="4" column="1">
                   <widget class="QPushButton" name="pushButton_32">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-bottom-left-radius:5px;
+border-bottom-right-radius:5px</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -1974,6 +2167,16 @@ text-align:left</string>
                  </item>
                  <item row="4" column="2">
                   <widget class="QPushButton" name="pushButton_31">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-bottom-left-radius:5px;
+border-bottom-right-radius:5px</string>
+                   </property>
                    <property name="text">
                     <string>CCW</string>
                    </property>
@@ -1981,6 +2184,16 @@ text-align:left</string>
                  </item>
                  <item row="0" column="2">
                   <widget class="ActionButton" name="actionbutton_22">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:5px;
+border-top-right-radius:5px</string>
+                   </property>
                    <property name="text">
                     <string>ON/OFF</string>
                    </property>
@@ -1988,6 +2201,12 @@ text-align:left</string>
                  </item>
                  <item row="1" column="2">
                   <widget class="QFrame" name="gridFrame_17">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_19">
                     <property name="leftMargin">
                      <number>0</number>
@@ -2048,6 +2267,12 @@ text-align:left</string>
                  </item>
                  <item row="3" column="1">
                   <widget class="QPushButton" name="pushButton_33">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
                    <property name="text">
                     <string>SET TOOL</string>
                    </property>
@@ -2055,6 +2280,20 @@ text-align:left</string>
                  </item>
                  <item row="3" column="2">
                   <widget class="QPushButton" name="pushButton_34">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>DejaVu Sans Mono</family>
+                     <weight>75</weight>
+                     <italic>false</italic>
+                     <bold>true</bold>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>MINUS</string>
                    </property>
@@ -2068,10 +2307,11 @@ text-align:left</string>
                 <property name="styleSheet">
                  <string notr="true">ActionButton
 {
-	background-color:rgb(238, 238, 236);
+	background-color:rgb(92, 53, 102);
 	border-radius:0px;
 	min-height:50px;
 	min-width:50px;
+font: bold large &quot;DejaVu Sans Mono&quot;
 	
 }</string>
                 </property>
@@ -2180,7 +2420,7 @@ border-bottom-right-radius:10px</string>
                     </sizepolicy>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgb(238, 238, 236);</string>
+                    <string notr="true">background-color:rgb(92, 53, 102)</string>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_18">
                     <property name="leftMargin">
@@ -2202,6 +2442,13 @@ border-bottom-right-radius:10px</string>
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">background-color:rgb(0,0,0);
@@ -2226,14 +2473,15 @@ border-radius:30px;</string>
               <item>
                <widget class="QFrame" name="DLowGrid">
                 <property name="styleSheet">
-                 <string notr="true">ActionButton
+                 <string notr="true">ActionButton, QPushButton
 {
-	background-color:rgb(238, 238, 236);
+	background-color:rgb(92, 53, 102);
 	border-radius:0px;
 	min-height:50px;
 	min-width:50px;
 	max-height:80px;
-	max-width:80px
+	max-width:80px;
+font: bold large &quot;DejaVu Sans Mono&quot;
 }</string>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_28">
@@ -2283,11 +2531,18 @@ border-top-right-radius:10px</string>
                  <item row="1" column="0">
                   <widget class="QFrame" name="gridFrame">
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgb(238, 238, 236);</string>
+                    <string notr="true">background-color:rgb(92, 53, 102)</string>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_29">
                     <item row="0" column="0">
                      <widget class="QPushButton" name="pushButton_36">
+                      <property name="font">
+                       <font>
+                        <family>DejaVu Sans Mono</family>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">background-color:rgb(0,0,0);
 color:rgb(255,255,255);
@@ -2384,6 +2639,11 @@ border-radius:30px;</string>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
    <class>GcodeEditor</class>
