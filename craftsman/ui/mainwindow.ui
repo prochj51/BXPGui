@@ -29,7 +29,8 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(0, 0, 0)</string>
+   <string notr="true">background-color:rgb(0, 0, 0);
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -80,7 +81,7 @@ background-color:rgb(252, 233, 79)
              <property name="frameShape">
               <enum>QFrame::Box</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,5,4">
+             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,5,4">
               <property name="spacing">
                <number>2</number>
               </property>
@@ -103,10 +104,44 @@ background-color:rgb(252, 233, 79)
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_3">
                  <item>
-                  <widget class="GcodeEditor" name="gcodeeditor"/>
+                  <widget class="GcodeEditor" name="gcodeeditor">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    padding: 2px;</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="is_editor" stdset="0">
+                    <bool>false</bool>
+                   </property>
+                   <property name="backgroundcolor" stdset="0">
+                    <string>#d9dadb</string>
+                   </property>
+                   <property name="marginbackgroundcolor" stdset="0">
+                    <string>#d9dadb</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <widget class="MDIEntry" name="mdientry"/>
+                  <widget class="MDIEntry" name="mdientry">
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(255, 255, 255)</string>
+                   </property>
+                   <property name="placeholderText">
+                    <string>MDI</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -159,12 +194,12 @@ background-color:rgb(252, 233, 79)
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">QPushButton{
+                       <string notr="true">QPushButton, DialogButton{
 background-color:rgb(32, 74, 135);
 border-radius:0px
 }
 
-QPushButton:hover{
+QPushButton:hover,DialogButton:hover{
 background-color: rgba(32, 74, 135, 50%)
 }
 </string>
@@ -186,48 +221,6 @@ background-color: rgba(32, 74, 135, 50%)
                          </property>
                          <property name="styleSheet">
                           <string notr="true">border-top-right-radius:5px</string>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="0">
-                        <widget class="QPushButton" name="pushButton_2">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <widget class="QPushButton" name="pushButton">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border-top-left-radius:5px</string>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="1">
-                        <widget class="QPushButton" name="pushButton_4">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
                          </property>
                          <property name="text">
                           <string>PushButton</string>
@@ -263,6 +256,57 @@ background-color: rgba(32, 74, 135, 50%)
                          </property>
                         </widget>
                        </item>
+                       <item row="1" column="0">
+                        <widget class="ActionButton" name="actionbutton_6">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>ESTOP</string>
+                         </property>
+                         <property name="actionName" stdset="0">
+                          <string>machine.estop.toggle</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="ActionButton" name="actionbutton_7">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string>POWER</string>
+                         </property>
+                         <property name="actionName" stdset="0">
+                          <string>machine.power.toggle</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="DialogButton" name="dialogbutton_2">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-top-left-radius:5px</string>
+                         </property>
+                         <property name="text">
+                          <string>OPEN FILE</string>
+                         </property>
+                         <property name="dialogName" stdset="0">
+                          <string>open_file</string>
+                         </property>
+                        </widget>
+                       </item>
                       </layout>
                      </widget>
                     </item>
@@ -281,66 +325,33 @@ border-radius:3px
                        <enum>QFrame::Box</enum>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_2">
-                       <item row="0" column="0">
-                        <widget class="QPushButton" name="playButton_2">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
+                       <item row="2" column="0">
+                        <widget class="ActionButton" name="actionbutton_9">
                          <property name="styleSheet">
-                          <string notr="true">QPushButton{
-background-color:rgb(115, 210, 22);
-border-radius:3px;
-}
-
-</string>
+                          <string notr="true">background-color:rgb(204, 0, 0)</string>
                          </property>
-                         <property name="text">
-                          <string>Play</string>
-                         </property>
-                         <property name="icon">
-                          <iconset resource="../resources/resources.qrc">
-                           <normaloff>:/play.svg</normaloff>
-                           <normalon>:/play.svg</normalon>:/play.svg</iconset>
-                         </property>
-                         <property name="iconSize">
-                          <size>
-                           <width>24</width>
-                           <height>24</height>
-                          </size>
-                         </property>
-                         <property name="checkable">
-                          <bool>true</bool>
+                         <property name="actionName" stdset="0">
+                          <string>program.abort</string>
                          </property>
                         </widget>
                        </item>
                        <item row="1" column="0">
-                        <widget class="QPushButton" name="pushButton_19">
+                        <widget class="ActionButton" name="actionbutton_8">
                          <property name="styleSheet">
-                          <string notr="true">QPushButton{
-background-color:rgb(245, 121, 0);
-}</string>
+                          <string notr="true">background-color:rgb(245, 121, 0)</string>
                          </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="icon">
-                          <iconset resource="../resources/resources.qrc">
-                           <normaloff>:/play.svg</normaloff>:/play.svg</iconset>
+                         <property name="actionName" stdset="0">
+                          <string>program.pause</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="2" column="0">
-                        <widget class="QPushButton" name="pushButton_20">
+                       <item row="0" column="0">
+                        <widget class="ActionButton" name="actionbutton_10">
                          <property name="styleSheet">
-                          <string notr="true">QPushButton{
-background-color:rgb(204, 0, 0);
-}</string>
+                          <string notr="true">background-color:rgb(115, 210, 22)</string>
                          </property>
-                         <property name="text">
-                          <string>PushButton</string>
+                         <property name="actionName" stdset="0">
+                          <string>program.run</string>
                          </property>
                         </widget>
                        </item>
@@ -373,48 +384,6 @@ background-color: rgba(32, 74, 135, 50%)
                     <property name="spacing">
                      <number>1</number>
                     </property>
-                    <item row="1" column="0">
-                     <widget class="QPushButton" name="pushButton_13">
-                      <property name="text">
-                       <string>PROBE ACTIVE</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QPushButton" name="pushButton_10">
-                      <property name="styleSheet">
-                       <string notr="true">border-top-left-radius:5px</string>
-                      </property>
-                      <property name="text">
-                       <string>SET TOOL
-HEIGHT</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QPushButton" name="pushButton_14">
-                      <property name="text">
-                       <string>DWELLING</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QPushButton" name="pushButton_11">
-                      <property name="text">
-                       <string>PROBE Z</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="2">
-                     <widget class="QPushButton" name="pushButton_12">
-                      <property name="styleSheet">
-                       <string notr="true">border-top-right-radius:5px</string>
-                      </property>
-                      <property name="text">
-                       <string>PROBE CORNER</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="1" column="2">
                      <widget class="QPushButton" name="pushButton_15">
                       <property name="font">
@@ -459,6 +428,48 @@ VELOCITY</string>
                       </property>
                      </widget>
                     </item>
+                    <item row="1" column="0">
+                     <widget class="QPushButton" name="pushButton_13">
+                      <property name="text">
+                       <string>PROBE ACTIVE</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_10">
+                      <property name="styleSheet">
+                       <string notr="true">border-top-left-radius:5px</string>
+                      </property>
+                      <property name="text">
+                       <string>SET TOOL
+HEIGHT</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QPushButton" name="pushButton_14">
+                      <property name="text">
+                       <string>DWELLING</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QPushButton" name="pushButton_11">
+                      <property name="text">
+                       <string>PROBE Z</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="pushButton_12">
+                      <property name="styleSheet">
+                       <string notr="true">border-top-right-radius:5px</string>
+                      </property>
+                      <property name="text">
+                       <string>PROBE CORNER</string>
+                      </property>
+                     </widget>
+                    </item>
                    </layout>
                   </widget>
                  </item>
@@ -487,7 +498,18 @@ VELOCITY</string>
                   <number>2</number>
                  </property>
                  <item>
-                  <widget class="VTKBackPlot" name="vtkbackplot"/>
+                  <widget class="VTKBackPlot" name="vtkbackplot">
+                   <property name="backgroundColor" stdset="0">
+                    <color>
+                     <red>0</red>
+                     <green>0</green>
+                     <blue>0</blue>
+                    </color>
+                   </property>
+                   <property name="enableProgramTicks" stdset="0">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QFrame" name="horizontalFrame">
@@ -587,28 +609,1704 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
            </item>
            <item>
             <widget class="QFrame" name="Lower">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>300</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="frameShape">
               <enum>QFrame::Box</enum>
              </property>
              <property name="frameShadow">
               <enum>QFrame::Plain</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout">
+             <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,3,2,1">
               <property name="spacing">
+               <number>20</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
                <number>0</number>
               </property>
               <item>
-               <spacer name="verticalSpacer">
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="sizeHint" stdset="0">
+               <widget class="QFrame" name="ALowGrid">
+                <property name="minimumSize">
                  <size>
-                  <width>20</width>
-                  <height>40</height>
+                  <width>400</width>
+                  <height>0</height>
                  </size>
                 </property>
-               </spacer>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>400</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">ActionButton{
+background-color:rgb(32, 74, 135);
+border-radius:0px;
+max-width: 100px;
+min-height : 35px;
+}
+
+ActionButton:hover{
+background-color: rgba(32, 74, 135, 50%)
+}
+
+DROWidget
+{
+background-color:rgb(238, 238, 236)
+}
+
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>1</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="ActionButton" name="actionbutton_12">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>X REF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="ActionButton" name="actionbutton_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>X ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="DROWidget" name="drowidget">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="referenceType" stdset="0">
+                    <enum>DROWidget::Relative</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QFrame" name="gridFrame_0">
+                   <layout class="QGridLayout" name="gridLayout_7">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MIN X</string>
+                      </property>
+                      <attribute name="buttonGroup">
+                       <string notr="true">minSoftLimitsLabels</string>
+                      </attribute>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_2">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.min_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QFrame" name="gridFrame_1">
+                   <layout class="QGridLayout" name="gridLayout_11">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_9">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MAX X</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_5">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.max_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="ActionButton" name="actionbutton_11">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Y REF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="ActionButton" name="actionbutton_17">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Y ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="DROWidget" name="drowidget_2">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="referenceType" stdset="0">
+                    <enum>DROWidget::Relative</enum>
+                   </property>
+                   <property name="axis" stdset="0">
+                    <enum>DROWidget::Y</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QFrame" name="gridFrame">
+                   <layout class="QGridLayout" name="gridLayout_8">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.min_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_4">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MIN Y</string>
+                      </property>
+                      <attribute name="buttonGroup">
+                       <string notr="true">minSoftLimitsLabels</string>
+                      </attribute>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QFrame" name="gridFrame_5">
+                   <layout class="QGridLayout" name="gridLayout_12">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_19">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MAX Y</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_6">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.max_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="ActionButton" name="actionbutton_13">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Z REF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="ActionButton" name="actionbutton_18">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Z ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="DROWidget" name="drowidget_3">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="referenceType" stdset="0">
+                    <enum>DROWidget::Relative</enum>
+                   </property>
+                   <property name="axis" stdset="0">
+                    <enum>DROWidget::Z</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QFrame" name="gridFrame_2">
+                   <layout class="QGridLayout" name="gridLayout_9">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_3">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.min_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_7">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MIN Z</string>
+                      </property>
+                      <attribute name="buttonGroup">
+                       <string notr="true">minSoftLimitsLabels</string>
+                      </attribute>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QFrame" name="gridFrame_6">
+                   <layout class="QGridLayout" name="gridLayout_13">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_20">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MAX Z</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_7">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.max_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="ActionButton" name="actionbutton_14">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>A REF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="ActionButton" name="actionbutton_19">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>A ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="DROWidget" name="drowidget_4">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="referenceType" stdset="0">
+                    <enum>DROWidget::Relative</enum>
+                   </property>
+                   <property name="axis" stdset="0">
+                    <enum>DROWidget::A</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QFrame" name="gridFrame_3">
+                   <layout class="QGridLayout" name="gridLayout_10">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_4">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.min_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_8">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MIN A</string>
+                      </property>
+                      <attribute name="buttonGroup">
+                       <string notr="true">minSoftLimitsLabels</string>
+                      </attribute>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QFrame" name="gridFrame_7">
+                   <layout class="QGridLayout" name="gridLayout_14">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_21">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>MAX A</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_8">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.min_position_limit?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="ActionButton" name="actionbutton_15">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Home
+All</string>
+                   </property>
+                   <property name="rules" stdset="0">
+                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Homed' if ch[0] else 'Home\\nAll'&quot;, &quot;name&quot;: &quot;ButtonText&quot;}]</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.home.all</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="ActionButton" name="actionbutton_20">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>ZERO ALL</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="ActionButton" name="actionbutton_21">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(245, 121, 0)</string>
+                   </property>
+                   <property name="text">
+                    <string>GO TO ZERO</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="BLowGrid">
+                <property name="styleSheet">
+                 <string notr="true">ActionButton, QPushButton{
+background-color:rgb(32, 74, 135);
+border-radius:0px;
+min-width: 80px;
+max-width: 200px;
+min-height : 35px;
+}
+
+ActionButton:hover, QPushButton:hover{
+background-color: rgba(32, 74, 135, 50%)
+}</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Box</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_26">
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>1</number>
+                 </property>
+                 <item row="2" column="2">
+                  <widget class="QPushButton" name="pushButton">
+                   <property name="text">
+                    <string>PLUS</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0" rowspan="5">
+                  <widget class="QFrame" name="speedFrame">
+                   <property name="styleSheet">
+                    <string notr="true">ActionSlider
+{
+max-width:200px;
+min-width:100px
+}
+
+QFrame &gt; QFrame
+{
+max-width:300px
+}</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_25">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="verticalSpacing">
+                     <number>0</number>
+                    </property>
+                    <item row="4" column="1">
+                     <widget class="QFrame" name="gridFrame_16">
+                      <layout class="QGridLayout" name="gridLayout_24">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_16">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]*100) + '%'&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_29">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>SPINDLE OVERRIDE</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QFrame" name="gridFrame_12">
+                      <layout class="QGridLayout" name="gridLayout_20">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_12">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_25">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>JOG SPEED</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="1" column="1">
+                     <widget class="QFrame" name="gridFrame_13">
+                      <layout class="QGridLayout" name="gridLayout_21">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_13">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:max_velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_26">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>MAX VELOCITY</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="3" column="1">
+                     <widget class="QFrame" name="gridFrame_15">
+                      <layout class="QGridLayout" name="gridLayout_23">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_15">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:rapidrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]*100)+'%'&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_28">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>RAPID OVERRIDE</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="2" column="1">
+                     <widget class="QFrame" name="gridFrame_14">
+                      <layout class="QGridLayout" name="gridLayout_22">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_14">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0]*100)+'%'&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_27">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>FEED OVERRIDE</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="ActionSlider" name="actionslider">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="value">
+                       <number>50</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.jog.set-linear-speed</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="ActionSlider" name="actionslider_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.max-velocity.set</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="ActionSlider" name="actionslider_3">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.feed-override.set</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <widget class="ActionSlider" name="actionslider_4">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.rapid-override.set</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QFrame" name="gridFrame_10">
+                   <layout class="QGridLayout" name="gridLayout_17">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_24">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>HEIGHT</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_11">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][1])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QFrame" name="gridFrame_9">
+                   <layout class="QGridLayout" name="gridLayout_16">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_23">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>DIAMETER</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_10">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QFrame" name="gridFrame_8">
+                   <layout class="QGridLayout" name="gridLayout_15">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_9">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_22">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>TOOL #</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QPushButton" name="pushButton_32">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QPushButton" name="pushButton_31">
+                   <property name="text">
+                    <string>CCW</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="ActionButton" name="actionbutton_22">
+                   <property name="text">
+                    <string>ON/OFF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QFrame" name="gridFrame_17">
+                   <layout class="QGridLayout" name="gridLayout_19">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_30">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>RPM</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_17">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(238, 238, 236)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                      </property>
+                      <property name="indent">
+                       <number>0</number>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QPushButton" name="pushButton_33">
+                   <property name="text">
+                    <string>SET TOOL</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QPushButton" name="pushButton_34">
+                   <property name="text">
+                    <string>MINUS</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="CLowGrid">
+                <property name="styleSheet">
+                 <string notr="true">ActionButton
+{
+	background-color:rgb(238, 238, 236);
+	border-radius:0px;
+	min-height:50px;
+	min-width:50px;
+	
+}</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="1" column="2">
+                  <widget class="ActionButton" name="actionbutton_4">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-top-right-radius:10px;
+border-bottom-right-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>Y+</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:y,pos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="ActionButton" name="actionbutton_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:10px;
+border-top-right-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>X+</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:x,pos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="ActionButton" name="actionbutton_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:10px;
+border-bottom-left-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>Y-</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:y,neg</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="ActionButton" name="actionbutton_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border-bottom-left-radius:10px;
+border-bottom-right-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>X-</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:x,neg</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QFrame" name="gridFrame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(238, 238, 236);</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_18">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_35">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(0,0,0);
+color:rgb(255,255,255);
+min-width:60px;
+max-width:60px;
+min-height:60px;
+max-height:60px;
+border-radius:30px;</string>
+                      </property>
+                      <property name="text">
+                       <string>X/Y</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFrame" name="DLowGrid">
+                <property name="styleSheet">
+                 <string notr="true">ActionButton
+{
+	background-color:rgb(238, 238, 236);
+	border-radius:0px;
+	min-height:50px;
+	min-width:50px;
+	max-height:80px;
+	max-width:80px
+}</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_28">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="2" column="0">
+                  <widget class="ActionButton" name="actionbutton_23">
+                   <property name="styleSheet">
+                    <string notr="true">border-bottom-left-radius:10px;
+border-bottom-right-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>Z-</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:z,neg</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="ActionButton" name="actionbutton">
+                   <property name="styleSheet">
+                    <string notr="true">border-top-left-radius:10px;
+border-top-right-radius:10px</string>
+                   </property>
+                   <property name="text">
+                    <string>Z+</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.jog.axis:z,pos</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QFrame" name="gridFrame">
+                   <property name="styleSheet">
+                    <string notr="true">background-color:rgb(238, 238, 236);</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_29">
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton_36">
+                      <property name="styleSheet">
+                       <string notr="true">background-color:rgb(0,0,0);
+color:rgb(255,255,255);
+min-width:60px;
+max-width:60px;
+min-height:60px;
+max-height:60px;
+border-radius:30px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Z</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -663,9 +2361,29 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
  </widget>
  <customwidgets>
   <customwidget>
+   <class>DialogButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.dialog_button</header>
+  </customwidget>
+  <customwidget>
    <class>MDIEntry</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>DROWidget</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_label</header>
   </customwidget>
   <customwidget>
    <class>GcodeEditor</class>
@@ -676,6 +2394,11 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
  </customwidgets>
  <resources>
@@ -795,4 +2518,7 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
    </hints>
   </connection>
  </connections>
+ <buttongroups>
+  <buttongroup name="minSoftLimitsLabels"/>
+ </buttongroups>
 </ui>
