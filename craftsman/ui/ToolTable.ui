@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ToolTable_Dialog</class>
+ <widget class="QDialog" name="ToolTable_Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>810</width>
+    <height>280</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="ToolTable" name="tooltable">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="deleteButton">
+       <property name="text">
+        <string>DELETE</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addTool">
+       <property name="text">
+        <string>ADD TOOL</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveTool">
+       <property name="text">
+        <string>SAVE TOOL</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="reloadTable">
+       <property name="text">
+        <string>RELOAD TABLE</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ToolTable</class>
+   <extends>QTableView</extends>
+   <header>qtpyvcp.widgets.input_widgets.tool_table</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>deleteButton</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>deleteSelectedTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addTool</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>addTool()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveTool</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>saveToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>504</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reloadTable</sender>
+   <signal>clicked()</signal>
+   <receiver>tooltable</receiver>
+   <slot>loadToolTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>703</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
