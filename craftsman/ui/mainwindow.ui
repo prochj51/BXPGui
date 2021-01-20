@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1182</width>
+    <width>1395</width>
     <height>719</height>
    </rect>
   </property>
@@ -38,7 +38,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(0,0,0)
+   <string notr="true">background-color:rgb(255,255,255)
 
 
 
@@ -95,7 +95,7 @@ background-color:rgb(252, 233, 79)
              <property name="frameShape">
               <enum>QFrame::Box</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,5,4">
+             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,3,3">
               <property name="spacing">
                <number>2</number>
               </property>
@@ -168,7 +168,7 @@ background-color:rgb(252, 233, 79)
                 <property name="frameShape">
                  <enum>QFrame::Box</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_5">
+                <layout class="QVBoxLayout" name="verticalLayout_5" stretch="3,0">
                  <property name="leftMargin">
                   <number>2</number>
                  </property>
@@ -186,7 +186,7 @@ background-color:rgb(252, 233, 79)
                    <property name="frameShape">
                     <enum>QFrame::Box</enum>
                    </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1">
                     <property name="leftMargin">
                      <number>2</number>
                     </property>
@@ -233,37 +233,8 @@ background-color: rgba(32, 74, 135, 50%)
                        <property name="spacing">
                         <number>1</number>
                        </property>
-                       <item row="0" column="1">
-                        <widget class="QPushButton" name="pushButton_3">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">border-top-right-radius:5px</string>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="2" column="1">
-                        <widget class="QPushButton" name="pushButton_5">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="text">
-                          <string>PushButton</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="0">
-                        <widget class="QPushButton" name="pushButton_6">
+                        <widget class="QPushButton" name="nextLine">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -271,15 +242,16 @@ background-color: rgba(32, 74, 135, 50%)
                           </sizepolicy>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">border-bottom-left-radius:5px</string>
+                          <string notr="true">border-bottom-right-radius:5px</string>
                          </property>
                          <property name="text">
-                          <string>PushButton</string>
+                          <string>EDIT
+GCODE</string>
                          </property>
                         </widget>
                        </item>
                        <item row="1" column="0">
-                        <widget class="ActionButton" name="actionbutton_6">
+                        <widget class="ActionButton" name="estopButton">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -294,40 +266,22 @@ background-color: rgba(32, 74, 135, 50%)
                            <bold>true</bold>
                           </font>
                          </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgba(239, 41, 41,100%)</string>
+                         </property>
                          <property name="text">
                           <string>ESTOP</string>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:estop&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot; 'background-color: rgba(239, 41, 41,50%)' if ch[0] else  'background-color: rgba(239, 41, 41,100%)'&quot;, &quot;name&quot;: &quot;EstopRule&quot;}]</string>
                          </property>
                          <property name="actionName" stdset="0">
                           <string>machine.estop.toggle</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="1" column="1">
-                        <widget class="ActionButton" name="actionbutton_7">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="font">
-                          <font>
-                           <family>DejaVu Sans Mono</family>
-                           <weight>75</weight>
-                           <italic>false</italic>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="text">
-                          <string>POWER</string>
-                         </property>
-                         <property name="actionName" stdset="0">
-                          <string>machine.power.toggle</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="0" column="0">
-                        <widget class="DialogButton" name="dialogbutton_2">
+                        <widget class="DialogButton" name="openFileButton">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -338,10 +292,61 @@ background-color: rgba(32, 74, 135, 50%)
                           <string notr="true">border-top-left-radius:5px</string>
                          </property>
                          <property name="text">
-                          <string>OPEN FILE</string>
+                          <string>OPEN
+FILE</string>
                          </property>
                          <property name="dialogName" stdset="0">
                           <string>open_file</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="ActionButton" name="powerButton">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>DejaVu Sans Mono</family>
+                           <weight>75</weight>
+                           <italic>false</italic>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgba(252, 233, 79,50%)</string>
+                         </property>
+                         <property name="text">
+                          <string>POWER</string>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:enabled&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot;'background-color:rgba(252, 233, 79,100%)' if ch[0] else 'background-color:rgba(252, 233, 79,50%)'&quot;, &quot;name&quot;: &quot;powerRule&quot;}]</string>
+                         </property>
+                         <property name="actionName" stdset="0">
+                          <string>machine.power.toggle</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="DialogButton" name="toolTableButton">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-top-right-radius:5px</string>
+                         </property>
+                         <property name="text">
+                          <string>TOOL
+TABLE</string>
+                         </property>
+                         <property name="dialogName" stdset="0">
+                          <string>tooltable_dialog</string>
                          </property>
                         </widget>
                        </item>
@@ -351,9 +356,9 @@ background-color: rgba(32, 74, 135, 50%)
                     <item>
                      <widget class="QFrame" name="gridFrame_2">
                       <property name="styleSheet">
-                       <string notr="true">QPushButton{
+                       <string notr="true">ActionButton{
 min-height:50px;
-max-width:100px;
+min-width:100px;
 border-radius:3px
 }
 
@@ -362,36 +367,621 @@ border-radius:3px
                       <property name="frameShape">
                        <enum>QFrame::Box</enum>
                       </property>
-                      <layout class="QGridLayout" name="gridLayout_2">
-                       <item row="2" column="0">
+                      <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0">
+                       <item row="2" column="1">
+                        <widget class="ActionButton" name="actionbutton_17">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(136, 138, 133)</string>
+                         </property>
+                         <property name="text">
+                          <string>NEXT LINE</string>
+                         </property>
+                         <property name="actionName" stdset="0">
+                          <string>program.step</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <spacer name="horizontalSpacer">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item row="3" column="1">
                         <widget class="ActionButton" name="actionbutton_9">
+                         <property name="palette">
+                          <palette>
+                           <active>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Light">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>218</red>
+                               <green>218</green>
+                               <blue>218</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Midlight">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>181</red>
+                               <green>181</green>
+                               <blue>181</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Dark">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Mid">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>97</red>
+                               <green>97</green>
+                               <blue>97</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="BrightText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>255</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Shadow">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="AlternateBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>200</red>
+                               <green>200</green>
+                               <blue>200</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>220</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </active>
+                           <inactive>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Light">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>218</red>
+                               <green>218</green>
+                               <blue>218</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Midlight">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>181</red>
+                               <green>181</green>
+                               <blue>181</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Dark">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Mid">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>97</red>
+                               <green>97</green>
+                               <blue>97</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="BrightText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>255</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Shadow">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="AlternateBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>200</red>
+                               <green>200</green>
+                               <blue>200</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>220</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </inactive>
+                           <disabled>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Light">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>218</red>
+                               <green>218</green>
+                               <blue>218</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Midlight">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>181</red>
+                               <green>181</green>
+                               <blue>181</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Dark">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Mid">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>97</red>
+                               <green>97</green>
+                               <blue>97</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Text">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="BrightText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>255</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ButtonText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>72</red>
+                               <green>72</green>
+                               <blue>72</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>204</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Shadow">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="AlternateBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>145</red>
+                               <green>145</green>
+                               <blue>145</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipBase">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>255</red>
+                               <green>255</green>
+                               <blue>220</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="ToolTipText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </disabled>
+                          </palette>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color:rgb(204, 0, 0)</string>
+                         </property>
+                         <property name="text">
+                          <string>ABORT</string>
                          </property>
                          <property name="actionName" stdset="0">
                           <string>program.abort</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="1" column="0">
+                       <item row="1" column="1">
                         <widget class="ActionButton" name="actionbutton_8">
                          <property name="styleSheet">
                           <string notr="true">background-color:rgb(245, 121, 0)</string>
+                         </property>
+                         <property name="text">
+                          <string>PAUSE</string>
                          </property>
                          <property name="actionName" stdset="0">
                           <string>program.pause</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="0" column="0">
+                       <item row="0" column="1">
                         <widget class="ActionButton" name="actionbutton_10">
+                         <property name="enabled">
+                          <bool>false</bool>
+                         </property>
+                         <property name="palette">
+                          <palette>
+                           <active>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </active>
+                           <inactive>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>0</red>
+                               <green>0</green>
+                               <blue>0</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </inactive>
+                           <disabled>
+                            <colorrole role="WindowText">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>173</red>
+                               <green>127</green>
+                               <blue>168</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Button">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Base">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                            <colorrole role="Window">
+                             <brush brushstyle="SolidPattern">
+                              <color alpha="255">
+                               <red>78</red>
+                               <green>154</green>
+                               <blue>6</blue>
+                              </color>
+                             </brush>
+                            </colorrole>
+                           </disabled>
+                          </palette>
+                         </property>
                          <property name="styleSheet">
-                          <string notr="true">background-color:rgb(115, 210, 22)</string>
+                          <string notr="true">background-color:rgb(78, 154, 6);
+</string>
+                         </property>
+                         <property name="text">
+                          <string>PLAY</string>
                          </property>
                          <property name="actionName" stdset="0">
                           <string>program.run</string>
                          </property>
                         </widget>
+                       </item>
+                       <item row="0" column="2">
+                        <spacer name="horizontalSpacer_2">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
                        </item>
                       </layout>
                      </widget>
@@ -424,57 +1014,76 @@ background-color: rgba(32, 74, 135, 50%)
                      <number>1</number>
                     </property>
                     <item row="1" column="2">
-                     <widget class="QPushButton" name="pushButton_15">
-                      <property name="font">
-                       <font>
-                        <family>DejaVu Sans Mono </family>
-                        <weight>75</weight>
-                        <italic>false</italic>
-                        <bold>true</bold>
-                       </font>
+                     <widget class="ActionButton" name="actionbutton_24">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
                       </property>
                       <property name="text">
-                       <string>CONSTANT
-VELOCITY</string>
+                       <string>COOLANT
+MIST</string>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>coolant.mist.toggle</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="0">
-                     <widget class="QPushButton" name="pushButton_16">
+                    <item row="0" column="2">
+                     <widget class="QPushButton" name="pushButton_11">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>PROBE Z</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="3">
+                     <widget class="QPushButton" name="pushButton_12">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="styleSheet">
-                       <string notr="true">border-bottom-left-radius:5px</string>
+                       <string notr="true">border-top-right-radius:5px</string>
                       </property>
                       <property name="text">
-                       <string>JOGGING</string>
+                       <string>PROBE CORNER</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="1">
-                     <widget class="QPushButton" name="pushButton_17">
+                    <item row="1" column="3">
+                     <widget class="ActionButton" name="actionbutton_19">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="text">
-                       <string>PushButton</string>
+                       <string>JOG
+CONTINUOUS</string>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.jog-mode.continuous</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="2" column="2">
-                     <widget class="QPushButton" name="pushButton_18">
-                      <property name="styleSheet">
-                       <string notr="true">border-bottom-right-radius:5px</string>
-                      </property>
-                      <property name="text">
-                       <string>PushButton</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="QPushButton" name="pushButton_13">
-                      <property name="text">
-                       <string>PROBE ACTIVE</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
+                    <item row="0" column="1">
                      <widget class="QPushButton" name="pushButton_10">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="styleSheet">
                        <string notr="true">border-top-left-radius:5px</string>
                       </property>
@@ -485,34 +1094,29 @@ HEIGHT</string>
                      </widget>
                     </item>
                     <item row="1" column="1">
-                     <widget class="QPushButton" name="pushButton_14">
-                      <property name="font">
-                       <font>
-                        <family>DejaVu Sans Mono </family>
-                        <weight>75</weight>
-                        <italic>false</italic>
-                        <bold>true</bold>
-                       </font>
+                     <widget class="ActionButton" name="actionbutton_20">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
                       </property>
                       <property name="text">
-                       <string>DWELLING</string>
+                       <string>COOLANT
+FLOOD</string>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>coolant.flood.toggle</string>
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="1">
-                     <widget class="QPushButton" name="pushButton_11">
-                      <property name="text">
-                       <string>PROBE Z</string>
+                    <item row="2" column="1" colspan="3">
+                     <widget class="JogIncrementWidget" name="jogincrementwidget">
+                      <property name="diameter" stdset="0">
+                       <number>0</number>
                       </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="2">
-                     <widget class="QPushButton" name="pushButton_12">
-                      <property name="styleSheet">
-                       <string notr="true">border-top-right-radius:5px</string>
-                      </property>
-                      <property name="text">
-                       <string>PROBE CORNER</string>
+                      <property name="layoutSpacing">
+                       <number>1</number>
                       </property>
                      </widget>
                     </item>
@@ -763,6 +1367,9 @@ border-top-right-radius:5px</string>
                    <property name="text">
                     <string>X REF</string>
                    </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.home.axis:x</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="0" column="2">
@@ -941,6 +1548,9 @@ border-top-right-radius:5px</string>
                    <property name="text">
                     <string>Y REF</string>
                    </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.home.axis:y</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="1" column="2">
@@ -1102,6 +1712,9 @@ text-align:left</string>
                    <property name="text">
                     <string>Z REF</string>
                    </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.home.axis:z</string>
+                   </property>
                   </widget>
                  </item>
                  <item row="2" column="2">
@@ -1262,6 +1875,9 @@ text-align:left</string>
                    </property>
                    <property name="text">
                     <string>A REF</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>machine.home.axis:a</string>
                    </property>
                   </widget>
                  </item>
@@ -1426,8 +2042,8 @@ text-align:left</string>
 border-bottom-right-radius:5px</string>
                    </property>
                    <property name="text">
-                    <string>HOME
-ALL</string>
+                    <string>Home
+All</string>
                    </property>
                    <property name="rules" stdset="0">
                     <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Homed' if ch[0] else 'Home\\nAll'&quot;, &quot;name&quot;: &quot;ButtonText&quot;}]</string>
@@ -1586,19 +2202,6 @@ background-color: rgba(32, 74, 135, 50%)
                  <property name="verticalSpacing">
                   <number>1</number>
                  </property>
-                 <item row="2" column="2">
-                  <widget class="QPushButton" name="pushButton">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>PLUS</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="0" rowspan="5">
                   <widget class="QFrame" name="speedFrame">
                    <property name="styleSheet">
@@ -1629,6 +2232,82 @@ max-width:300px
                     <property name="verticalSpacing">
                      <number>0</number>
                     </property>
+                    <item row="1" column="1">
+                     <widget class="QFrame" name="gridFrame_13">
+                      <layout class="QGridLayout" name="gridLayout_21">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="1" column="0">
+                        <widget class="StatusLabel" name="statuslabel_13">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236)</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                         </property>
+                         <property name="indent">
+                          <number>0</number>
+                         </property>
+                         <property name="rules" stdset="0">
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:max_velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(round(ch[0],2))&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QPushButton" name="pushButton_26">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(238, 238, 236);
+min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                         </property>
+                         <property name="text">
+                          <string>MAX VELOCITY</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="ActionSlider" name="actionslider_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.max-velocity.set</string>
+                      </property>
+                     </widget>
+                    </item>
                     <item row="4" column="1">
                      <widget class="QFrame" name="gridFrame_16">
                       <layout class="QGridLayout" name="gridLayout_24">
@@ -1680,7 +2359,7 @@ max-width:300px
                           <number>0</number>
                          </property>
                          <property name="rules" stdset="0">
-                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;settings:machine.jog.linear-speed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
                          </property>
                         </widget>
                        </item>
@@ -1706,66 +2385,6 @@ border-top-right-radius:5px</string>
                          </property>
                          <property name="text">
                           <string>JOG SPEED</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item row="1" column="1">
-                     <widget class="QFrame" name="gridFrame_13">
-                      <layout class="QGridLayout" name="gridLayout_21">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <item row="1" column="0">
-                        <widget class="StatusLabel" name="statuslabel_13">
-                         <property name="styleSheet">
-                          <string notr="true">background-color:rgb(238, 238, 236)</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
-                         </property>
-                         <property name="indent">
-                          <number>0</number>
-                         </property>
-                         <property name="rules" stdset="0">
-                          <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:max_velocity&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <widget class="QPushButton" name="pushButton_26">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color:rgb(238, 238, 236);
-min-height:5px;
-max-height:15px;
-border-radius:0px;
-text-align:left</string>
-                         </property>
-                         <property name="text">
-                          <string>MAX VELOCITY</string>
                          </property>
                         </widget>
                        </item>
@@ -1894,41 +2513,6 @@ text-align:left</string>
                       </layout>
                      </widget>
                     </item>
-                    <item row="0" column="0">
-                     <widget class="ActionSlider" name="actionslider">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="value">
-                       <number>50</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="actionName" stdset="0">
-                       <string>machine.jog.set-linear-speed</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0">
-                     <widget class="ActionSlider" name="actionslider_2">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="actionName" stdset="0">
-                       <string>machine.max-velocity.set</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="2" column="0">
                      <widget class="ActionSlider" name="actionslider_3">
                       <property name="sizePolicy">
@@ -1958,6 +2542,25 @@ text-align:left</string>
                       </property>
                       <property name="actionName" stdset="0">
                        <string>machine.rapid-override.set</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="ActionSlider" name="actionslider">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="value">
+                       <number>50</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>machine.jog.set-linear-speed</string>
                       </property>
                      </widget>
                     </item>
@@ -2165,23 +2768,6 @@ border-bottom-right-radius:5px</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="2">
-                  <widget class="QPushButton" name="pushButton_31">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="styleSheet">
-                    <string notr="true">border-bottom-left-radius:5px;
-border-bottom-right-radius:5px</string>
-                   </property>
-                   <property name="text">
-                    <string>CCW</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="2">
                   <widget class="ActionButton" name="actionbutton_22">
                    <property name="sizePolicy">
@@ -2195,7 +2781,10 @@ border-bottom-right-radius:5px</string>
 border-top-right-radius:5px</string>
                    </property>
                    <property name="text">
-                    <string>ON/OFF</string>
+                    <string>OFF</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.off</string>
                    </property>
                   </widget>
                  </item>
@@ -2258,7 +2847,7 @@ text-align:left</string>
                        <number>0</number>
                       </property>
                       <property name="rules" stdset="0">
-                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_in_spindle?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.speed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
                       </property>
                      </widget>
                     </item>
@@ -2279,24 +2868,138 @@ text-align:left</string>
                   </widget>
                  </item>
                  <item row="3" column="2">
-                  <widget class="QPushButton" name="pushButton_34">
+                  <widget class="ActionButton" name="actionbutton_7">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
-                   <property name="font">
-                    <font>
-                     <family>DejaVu Sans Mono</family>
-                     <weight>75</weight>
-                     <italic>false</italic>
-                     <bold>true</bold>
-                    </font>
+                   <property name="text">
+                    <string>CW</string>
+                   </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.forward:7200</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="ActionButton" name="actionbutton_16">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>MINUS</string>
+                    <string>CCW</string>
                    </property>
+                   <property name="actionName" stdset="0">
+                    <string>spindle.reverse:7200</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QFrame" name="horizontalFrame">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                    <property name="spacing">
+                     <number>1</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="ActionButton" name="actionbutton_6">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>49</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">min-width:49px;
+max-width:50px</string>
+                      </property>
+                      <property name="text">
+                       <string>MIN</string>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>spindle.slower</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="ActionButton" name="actionbutton_25">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>49</width>
+                        <height>35</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">min-width:49px;
+max-width:50px</string>
+                      </property>
+                      <property name="text">
+                       <string>PLUS</string>
+                      </property>
+                      <property name="actionName" stdset="0">
+                       <string>spindle.faster</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -2615,6 +3318,11 @@ border-radius:30px;</string>
   </action>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>JogIncrementWidget</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.input_widgets.jog_increment</header>
+  </customwidget>
   <customwidget>
    <class>DialogButton</class>
    <extends>QPushButton</extends>

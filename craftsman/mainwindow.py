@@ -13,7 +13,7 @@ class MyMainWindow(VCPMainWindow):
     def __init__(self, *args, **kwargs):
         super(MyMainWindow, self).__init__(*args, **kwargs)
         #self.UiComponents()
-	actions.jog.set_linear_speed(1)
+	#actions.jog.set_linear_speed(1)
 
 
     # add any custom methods here
