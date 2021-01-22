@@ -1,0 +1,8 @@
+LinuxCNC Tool Table
+
+;Pocket Tool   Diameter     Z Offset     Remark
+;Pocket Tool   Diameter     Z Offset     Remark
+P1     T1     D+0.000000   Z+0.000000   ; TestTool
+P2     T2     D+0.062500   Z+0.100000   ; 1/16 end mill
+P3     T3     D+0.201000   Z+1.273000   ; #7 tap drill
+P99999 T99999 D+0.000000   Z+0.100000   ; big tool number
