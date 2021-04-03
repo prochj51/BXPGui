@@ -61,12 +61,12 @@ background-color:rgb(252, 233, 79)
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="cnc_tab">
        <property name="styleSheet">
         <string notr="true"/>
        </property>
        <attribute name="title">
-        <string>MAIN SCREEN</string>
+        <string>CNC</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0">
@@ -131,7 +131,7 @@ background-color:rgb(252, 233, 79)
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="is_editor" stdset="0">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="backgroundcolor" stdset="0">
                     <string>#d9dadb</string>
@@ -234,7 +234,7 @@ background-color: rgba(32, 74, 135, 50%)
                         <number>1</number>
                        </property>
                        <item row="2" column="1">
-                        <widget class="QPushButton" name="nextLine">
+                        <widget class="QPushButton" name="editGCode">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                            <horstretch>0</horstretch>
@@ -342,11 +342,10 @@ FILE</string>
                           <string notr="true">border-top-right-radius:5px</string>
                          </property>
                          <property name="text">
-                          <string>TOOL
-TABLE</string>
+                          <string>OFFSETS</string>
                          </property>
                          <property name="dialogName" stdset="0">
-                          <string>tooltable_dialog</string>
+                          <string>offsets_dialog</string>
                          </property>
                         </widget>
                        </item>
@@ -368,7 +367,7 @@ border-radius:3px
                        <enum>QFrame::Box</enum>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0">
-                       <item row="2" column="1">
+                       <item row="4" column="1">
                         <widget class="ActionButton" name="actionbutton_17">
                          <property name="styleSheet">
                           <string notr="true">background-color:rgb(136, 138, 133)</string>
@@ -394,7 +393,7 @@ border-radius:3px
                          </property>
                         </spacer>
                        </item>
-                       <item row="3" column="1">
+                       <item row="5" column="1">
                         <widget class="ActionButton" name="actionbutton_9">
                          <property name="palette">
                           <palette>
@@ -822,18 +821,18 @@ border-radius:3px
                          </property>
                         </widget>
                        </item>
-                       <item row="1" column="1">
-                        <widget class="ActionButton" name="actionbutton_8">
-                         <property name="styleSheet">
-                          <string notr="true">background-color:rgb(245, 121, 0)</string>
+                       <item row="0" column="2">
+                        <spacer name="horizontalSpacer_2">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
                          </property>
-                         <property name="text">
-                          <string>PAUSE</string>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
                          </property>
-                         <property name="actionName" stdset="0">
-                          <string>program.pause</string>
-                         </property>
-                        </widget>
+                        </spacer>
                        </item>
                        <item row="0" column="1">
                         <widget class="ActionButton" name="actionbutton_10">
@@ -970,18 +969,31 @@ border-radius:3px
                          </property>
                         </widget>
                        </item>
-                       <item row="0" column="2">
-                        <spacer name="horizontalSpacer_2">
-                         <property name="orientation">
-                          <enum>Qt::Horizontal</enum>
+                       <item row="2" column="1">
+                        <widget class="ActionButton" name="actionbutton_8">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(245, 121, 0)</string>
                          </property>
-                         <property name="sizeHint" stdset="0">
-                          <size>
-                           <width>40</width>
-                           <height>20</height>
-                          </size>
+                         <property name="text">
+                          <string>PAUSE</string>
                          </property>
-                        </spacer>
+                         <property name="actionName" stdset="0">
+                          <string>program.pause</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="ActionButton" name="actionbutton_18">
+                         <property name="styleSheet">
+                          <string notr="true">background-color:rgb(252, 233, 79)</string>
+                         </property>
+                         <property name="text">
+                          <string>RESUME</string>
+                         </property>
+                         <property name="actionName" stdset="0">
+                          <string>program.resume</string>
+                         </property>
+                        </widget>
                        </item>
                       </layout>
                      </widget>
@@ -1305,7 +1317,7 @@ font: 10pt &quot;MathJax_Size3 Bold&quot;;
                  </size>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">ActionButton, MDIButton{
+                 <string notr="true">ActionButton, MDIButton, DialogButton{
 background-color:rgb(32, 74, 135);
 border-radius:0px;
 max-width: 100px;
@@ -1313,11 +1325,11 @@ min-height : 35px;
 font: bold large &quot;DejaVu Sans Mono&quot;
 }
 
-ActionButton:hover, MDIButton:hover{
+ActionButton:hover, MDIButton:hover, DialogButton:hover{
 background-color: rgba(32, 74, 135, 50%)
 }
 
-DROWidget
+DROLabel, StatusLabel
 {
 background-color:rgb(211, 215, 207)
 }
@@ -1369,20 +1381,6 @@ border-top-right-radius:5px</string>
                    </property>
                    <property name="actionName" stdset="0">
                     <string>machine.home.axis:x</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="DROWidget" name="drowidget">
-                   <property name="styleSheet">
-                    <string notr="true">border-top-left-radius:5px;
-border-top-right-radius:5px</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="referenceType" stdset="0">
-                    <enum>DROWidget::Relative</enum>
                    </property>
                   </widget>
                  </item>
@@ -1553,19 +1551,6 @@ border-top-right-radius:5px</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="2">
-                  <widget class="DROWidget" name="drowidget_2">
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="referenceType" stdset="0">
-                    <enum>DROWidget::Relative</enum>
-                   </property>
-                   <property name="axis" stdset="0">
-                    <enum>DROWidget::Y</enum>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="3">
                   <widget class="QFrame" name="gridFrame">
                    <property name="styleSheet">
@@ -1717,19 +1702,6 @@ text-align:left</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="2">
-                  <widget class="DROWidget" name="drowidget_3">
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="referenceType" stdset="0">
-                    <enum>DROWidget::Relative</enum>
-                   </property>
-                   <property name="axis" stdset="0">
-                    <enum>DROWidget::Z</enum>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="2" column="3">
                   <widget class="QFrame" name="gridFrame_2">
                    <property name="styleSheet">
@@ -1878,19 +1850,6 @@ text-align:left</string>
                    </property>
                    <property name="actionName" stdset="0">
                     <string>machine.home.axis:a</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="DROWidget" name="drowidget_4">
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="referenceType" stdset="0">
-                    <enum>DROWidget::Relative</enum>
-                   </property>
-                   <property name="axis" stdset="0">
-                    <enum>DROWidget::A</enum>
                    </property>
                   </widget>
                  </item>
@@ -2128,26 +2087,6 @@ border-bottom-right-radius:5px</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="1">
-                  <widget class="MDIButton" name="mdibutton_4">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>ZERO
-ALL</string>
-                   </property>
-                   <property name="rules" stdset="0">
-                    <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;None&quot;, &quot;expression&quot;: &quot;&quot;, &quot;name&quot;: &quot;GxRule&quot;}]</string>
-                   </property>
-                   <property name="MDICommand" stdset="0">
-                    <string>G10 L20 P{ch[0]} X0.0 Y0.0 Z0.0</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="1">
                   <widget class="MDIButton" name="mdibutton_5">
                    <property name="sizePolicy">
@@ -2165,6 +2104,109 @@ ALL</string>
                    <property name="MDICommand" stdset="0">
                     <string>G10 L20 P{ch[0]} X0.0</string>
                    </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="DROLabel" name="drolabel">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="DROLabel" name="drolabel_2">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="axisNumber" stdset="0">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="DROLabel" name="drolabel_3">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="axisNumber" stdset="0">
+                    <number>2</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="DROLabel" name="drolabel_4">
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="axisNumber" stdset="0">
+                    <number>3</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="DialogButton" name="dialogbutton_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>SET OFFSET</string>
+                   </property>
+                   <property name="dialogName" stdset="0">
+                    <string>set_work_offsets</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3">
+                  <widget class="QFrame" name="gridFrame">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton,StatusLabel
+{
+background-color:rgb(211, 215, 207)
+}</string>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_27">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="1" column="0">
+                     <widget class="StatusLabel" name="statuslabel_16">
+                      <property name="alignment">
+                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      </property>
+                      <property name="rules" stdset="0">
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_vel?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="pushButton">
+                      <property name="styleSheet">
+                       <string notr="true">min-height:5px;
+max-height:15px;
+border-radius:0px;
+text-align:left</string>
+                      </property>
+                      <property name="text">
+                       <string>Speed</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -2621,7 +2663,7 @@ text-align:left;
                        <number>0</number>
                       </property>
                       <property name="rules" stdset="0">
-                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][1])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?Z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
                       </property>
                      </widget>
                     </item>
@@ -2681,7 +2723,7 @@ text-align:left</string>
                        <number>0</number>
                       </property>
                       <property name="rules" stdset="0">
-                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:tool_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0][0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?D&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;str(ch[0])&quot;, &quot;name&quot;: &quot;textRule&quot;}]</string>
                       </property>
                      </widget>
                     </item>
@@ -2854,19 +2896,6 @@ text-align:left</string>
                    </layout>
                   </widget>
                  </item>
-                 <item row="3" column="1">
-                  <widget class="QPushButton" name="pushButton_33">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>SET TOOL</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="3" column="2">
                   <widget class="ActionButton" name="actionbutton_7">
                    <property name="sizePolicy">
@@ -3000,6 +3029,23 @@ max-width:50px</string>
                      </widget>
                     </item>
                    </layout>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="DialogButton" name="dialogbutton">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>TOOL
+TABLE</string>
+                   </property>
+                   <property name="dialogName" stdset="0">
+                    <string>tooltable_dialog</string>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -3275,6 +3321,9 @@ border-radius:30px;</string>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_2">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <attribute name="title">
         <string>Tab 2</string>
        </attribute>
@@ -3339,11 +3388,6 @@ border-radius:30px;</string>
    <header>qtpyvcp.widgets.input_widgets.action_slider</header>
   </customwidget>
   <customwidget>
-   <class>DROWidget</class>
-   <extends>QLabel</extends>
-   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
-  </customwidget>
-  <customwidget>
    <class>StatusLabel</class>
    <extends>QLabel</extends>
    <header>qtpyvcp.widgets.display_widgets.status_label</header>
@@ -3362,6 +3406,12 @@ border-radius:30px;</string>
    <class>VTKBackPlot</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DROLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
    <class>ActionButton</class>
