@@ -33,7 +33,6 @@ data_plugins:
       # specify text to be added before the tool table data
       file_header_template: |
         LinuxCNC Tool Table
-
 windows:
 
   mainwindow:
@@ -61,6 +60,15 @@ dialogs:
     provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
     kwargs:
       ui_file: {{ file.dir }}/ui/ToolTable.ui
+      title: Tool table    # optional, set the dialog title
+      #modal: false              # optional, whether the dialog is modal
+      #popup: false              # optional, whether the dialog is a popup
+      #frameless: true          # optional, whether the dialog is frameless
+      stay_on_top: true         # optional, whether the dialog stays on top
+  offsets_dialog:
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/ui/Offsets.ui
       title: Tool table    # optional, set the dialog title
       #modal: false              # optional, whether the dialog is modal
       #popup: false              # optional, whether the dialog is a popup
