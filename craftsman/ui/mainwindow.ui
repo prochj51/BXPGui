@@ -3320,14 +3320,6 @@ border-radius:30px;</string>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <attribute name="title">
-        <string>Tab 2</string>
-       </attribute>
-      </widget>
      </widget>
     </item>
    </layout>
